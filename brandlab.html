@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BrandLab AI</title>
+  <link rel="stylesheet" href="brandlab.css" />
+</head>
+<body>
+
+  <main class="app">
+    <section class="intro">
+      <p class="eyebrow">AI / BRANDING TOOL</p>
+      <h1>BrandLab AI</h1>
+      <p>
+        Generate premium brand directions, color systems, typography pairings,
+        UI previews and export-ready CSS variables.
+      </p>
+    </section>
+
+    <section class="workspace">
+      <aside class="panel">
+        <label>Brand name</label>
+        <input id="brandName" type="text" placeholder="Velora, Lumen, Noir Studio...">
+
+        <label>Industry</label>
+        <select id="industry">
+          <option value="fashion">Fashion Brand</option>
+          <option value="hotel">Luxury Hotel</option>
+          <option value="perfume">Perfume House</option>
+          <option value="architecture">Architecture Studio</option>
+          <option value="coffee">Coffee Brand</option>
+          <option value="tech">Tech Product</option>
+        </select>
+
+        <label>Mood</label>
+        <select id="mood">
+          <option value="luxury">Luxury</option>
+          <option value="minimal">Minimal</option>
+          <option value="editorial">Editorial</option>
+          <option value="dark">Dark Cinematic</option>
+          <option value="warm">Warm Organic</option>
+        </select>
+
+        <label>Target feeling</label>
+        <select id="feeling">
+          <option value="trust">Trust</option>
+          <option value="desire">Desire</option>
+          <option value="calm">Calm</option>
+          <option value="power">Power</option>
+          <option value="mystery">Mystery</option>
+        </select>
+
+        <button id="generate">Generate Identity</button>
+        <button id="save" class="ghost">Save Concept</button>
+        <button id="clear" class="ghost">Clear Saved</button>
+      </aside>
+
+      <section class="output">
+        <div class="brand-header">
+          <div>
+            <p class="eyebrow">Generated Direction</p>
+            <h2 id="resultName">Velora Studio</h2>
+            <p id="tagline">A refined digital identity built for atmosphere, clarity and desire.</p>
+          </div>
+
+          <div class="score">
+            <span id="score">94</span>
+            <small>Brand Score</small>
+          </div>
+        </div>
+
+        <div class="grid">
+          <div class="card palette-card">
+            <div class="card-head">
+              <p>Color System</p>
+              <button id="copyPalette">Copy Palette</button>
+            </div>
+            <div id="palette" class="palette"></div>
+          </div>
+
+          <div class="card">
+            <p class="card-label">Typography</p>
+            <h3 id="fontTitle">Cormorant Garamond / Inter</h3>
+            <p id="fontText">Elegant serif display paired with clean readable sans-serif body text.</p>
+          </div>
+
+          <div class="card">
+            <p class="card-label">Brand Personality</p>
+            <div id="keywords" class="keywords"></div>
+          </div>
+
+          <div class="card">
+            <p class="card-label">Strategy Note</p>
+            <p id="strategy"></p>
+          </div>
+        </div>
+
+        <section class="preview" id="preview">
+          <div class="preview-nav">
+            <span id="previewLogo">VELORA</span>
+            <nav>
+              <a>Work</a>
+              <a>About</a>
+              <a>Contact</a>
+            </nav>
+          </div>
+
+          <div class="preview-hero">
+            <p id="previewLabel">Luxury / Concept</p>
+            <h2 id="previewTitle">Designed to be remembered.</h2>
+            <p id="previewText">
+              A visual system shaped by atmosphere, thoughtful details and emotional clarity.
+            </p>
+            <button id="previewButton">Explore Identity</button>
+          </div>
+        </section>
+
+        <section class="components">
+          <div class="mini-card">
+            <p>Button Style</p>
+            <button class="demo-btn">Primary Action</button>
+          </div>
+
+          <div class="mini-card">
+            <p>Brand Card</p>
+            <h4 id="miniTitle">Quiet luxury, strong presence.</h4>
+            <small id="miniText">A system made to feel intentional and memorable.</small>
+          </div>
+
+          <div class="mini-card">
+            <p>Saved Concepts</p>
+            <ul id="savedList"></ul>
+          </div>
+        </section>
+
+        <section class="export card">
+          <div class="card-head">
+            <p>Export CSS Variables</p>
+            <button id="copyCss">Copy CSS</button>
+          </div>
+          <pre id="cssExport"></pre>
+        </section>
+      </section>
+    </section>
+  </main>
+
+  <div id="toast">Copied</div>
+
+  <script src="brandlab.js"></script>
+</body>
+</html>
